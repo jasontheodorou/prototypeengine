@@ -1,1 +1,14 @@
 node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor and OS
+.DS_Store
+.vscode/
+.idea/
+
+# Old copies — use git history instead
+*.backup

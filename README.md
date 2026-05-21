@@ -11,32 +11,46 @@ A designer describes a service in plain English. The app calls Claude, which ret
 ---
 
 ## Running locally
+
 ```
 npm install
-ANTHROPIC_API_KEY=your-key-here npm start
+ANTHROPIC_API_KEY=... \
+GITHUB_TOKEN=... \
+GITHUB_USERNAME=... \
+RENDER_API_KEY=... \
+RENDER_OWNER_ID=... \
+npm start
 ```
 
 Open http://localhost:3000
+
+For day-to-day development, put these in a `.env` file (already gitignored) and load it with a tool like `dotenv-cli`.
 
 ---
 
 ## Deploying to Render
 
-1. Push this repo to GitHub
-2. Create a new Web Service on Render pointing at the repo
+1. Push this repo to GitHub.
+2. Create a new Web Service on Render pointing at the repo.
 3. Build command: `npm install`
 4. Start command: `npm start`
-5. Add environment variable: `ANTHROPIC_API_KEY` = your Anthropic API key
-6. Deploy
+5. Set the environment variables listed below.
+6. Deploy.
 
 ---
 
 ## Environment variables
 
+All five are required. The app will return a 500 from the generate endpoints if any are missing.
+
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `ANTHROPIC_API_KEY` | Yes | Your Anthropic API key from console.anthropic.com |
-| `PORT` | No | Port to run on (Render sets this automatically) |
+| `ANTHROPIC_API_KEY` | Yes | Anthropic API key from console.anthropic.com. Used for the Claude calls. |
+| `GITHUB_TOKEN` | Yes | GitHub personal access token with `repo` scope. Used to create a repo and push files per prototype. |
+| `GITHUB_USERNAME` | Yes | The GitHub account that will own each generated prototype repo. |
+| `RENDER_API_KEY` | Yes | Render API key. Used to create a new web service per prototype. |
+| `RENDER_OWNER_ID` | Yes | The Render workspace or team ID the new services are created under. |
+| `PORT` | No | Port to run on. Render sets this automatically. |
 
 ---
 
