@@ -68,3 +68,15 @@ All five are required. The app will return a 500 from the generate endpoints if 
 ## Cost
 
 Each prototype generation costs roughly 2–5p in Claude API usage depending on brief length.
+
+---
+
+## Further documentation
+
+For anyone picking this codebase up:
+
+- [`docs/markdown/BUILD-GUIDE.md`](docs/markdown/BUILD-GUIDE.md) — plain English spec for building a fresh version of the app
+- [`docs/markdown/CODE-REVIEW.md`](docs/markdown/CODE-REVIEW.md) — senior dev review of this codebase with a prioritised list of issues
+- [`docs/markdown/ROADMAP.md`](docs/markdown/ROADMAP.md) — what's done, in progress, and planned
+
+Word versions of all four documents (including this README) are in [`docs/word/`](docs/word/).
