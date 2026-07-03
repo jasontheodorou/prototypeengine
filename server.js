@@ -662,7 +662,7 @@ app.post('/generate-v1', upload.single('pdf'), async (req, res) => {
                 'anthropic-version': '2023-06-01'
               },
               body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
+                model: 'claude-sonnet-4-6',
                 max_tokens: 2000,
                 system: 'You are a government policy analyst. You will receive a service brief and a policy document. Extract and summarise only the content relevant to the brief. Return a clean markdown summary covering: eligibility rules and criteria, evidence requirements, key process steps and timeframes, any user-facing terminology that must be used, and any exclusions or special cases. Be concise. Maximum 1500 words.',
                 messages: [{ role: 'user', content: `Brief: ${brief.trim()}\n\nDocument:\n${pdfText}` }]
@@ -699,7 +699,7 @@ app.post('/generate-v1', upload.single('pdf'), async (req, res) => {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 4000,
         system: gdsPromptV1,
         messages: [{ role: 'user', content: userMessage }]
@@ -737,7 +737,7 @@ app.post('/generate-v1', upload.single('pdf'), async (req, res) => {
             'anthropic-version': '2023-06-01'
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
+            model: 'claude-sonnet-4-6',
             max_tokens: 2000,
             system: contentReviewPrompt,
             messages: [{ role: 'user', content: JSON.stringify(spec) + '\n\nReturn only the improved JSON object. No explanation. No markdown.' }]
@@ -1144,7 +1144,7 @@ app.post('/generate-v2', upload.single('pdf'), async (req, res) => {
                 'anthropic-version': '2023-06-01'
               },
               body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
+                model: 'claude-sonnet-4-6',
                 max_tokens: 2000,
                 system: 'You are a government policy analyst. You will receive a service brief and a policy document. Extract and summarise only the content relevant to the brief. Return a clean markdown summary covering: eligibility rules and criteria, evidence requirements, key process steps and timeframes, any user-facing terminology that must be used, and any exclusions or special cases. Be concise. Maximum 1500 words.',
                 messages: [{ role: 'user', content: `Brief: ${brief.trim()}\n\nDocument:\n${pdfText}` }]
@@ -1181,7 +1181,7 @@ app.post('/generate-v2', upload.single('pdf'), async (req, res) => {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 8000,
         system: gdsPromptV2,
         messages: [{ role: 'user', content: userMessage }]
@@ -1588,7 +1588,7 @@ app.post('/generate-v3', upload.single('pdf'), async (req, res) => {
                 'anthropic-version': '2023-06-01'
               },
               body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
+                model: 'claude-sonnet-4-6',
                 max_tokens: 2000,
                 system: 'You are a government policy analyst. You will receive a service brief and a policy document. Extract and summarise only the content relevant to the brief. Return a clean markdown summary covering: eligibility rules and criteria, evidence requirements, key process steps and timeframes, any user-facing terminology that must be used, and any exclusions or special cases. Be concise. Maximum 1500 words.',
                 messages: [{ role: 'user', content: `Brief: ${brief.trim()}\n\nDocument:\n${pdfText}` }]
@@ -1625,7 +1625,7 @@ app.post('/generate-v3', upload.single('pdf'), async (req, res) => {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 8000,
         system: gdsPromptV2,
         messages: [{ role: 'user', content: userMessage }]
