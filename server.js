@@ -36,6 +36,9 @@ async function createGitHubRepo(repoName, token) {
   });
   if (!res.ok) {
     const err = await res.json();
+    if (res.status === 401) {
+      throw new Error('GitHub token rejected (401 Bad credentials). The GITHUB_TOKEN has expired or been revoked — generate a new token with "repo" scope and update GITHUB_TOKEN in the Render dashboard (Environment tab).');
+    }
     throw new Error(`GitHub repo creation failed: ${err.message}`);
   }
   return await res.json();
